@@ -1,14 +1,7 @@
 <div class="newsticker" style="height: 2em; overflow: hidden;">
-<?php
-
-$datadir=$_GET['datadir'];
-$itemsArg=$_GET['items'];
-$items = explode (",", $itemsArg);
-
-foreach ($items as $item) {
-  include($datadir . "/news_" . $item . ".php");
-}
-?>
+  <div class='jumbo'>Created by <a href='http://allynbauer.com'>Allyn Bauer</a></div>
+  <div class='jumbo'>Get it at <a href='http://github.com/ajb/statuspanic'>GitHub</a></div>
+  <div class='jumbo'>Today: <strong><?php echo date('Y-m-d'); ?></strong></div>
 </div>
 
 
