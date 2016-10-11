@@ -1,0 +1,20 @@
+/* ARROW MODULE */
+
+#arrow_icon {
+	font: normal 65px 'Cutouts';
+	display: block;	
+}
+
+.uparrow {
+	color: #15af00;
+}
+
+.downarrow {
+	color: #e31d18;
+	-webkit-transform: rotate(180deg); 
+	-moz-transform: rotate(180deg);
+}
+
+.zero-block {
+	color: #3d69fe;
+}

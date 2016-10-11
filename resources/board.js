@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function render_module(name, args, firstrun) {
   $('#' + name).load('modules/' + name + '.module.php?' + args , function() {
     if (firstrun==1)
@@ -9,6 +10,16 @@ function activate_module(name, seconds, args) {
   render_module(name, args, 1);
   if (seconds > 0) {
     setInterval("render_module('"+name+"', '"+args+"', '0')", (seconds * 1000));
+=======
+function render_module(name, type, args) {
+  $('#' + name).load('modules/' + type + '/?' + args);
+}
+
+function activate_module(name, type, seconds, args) {
+  render_module(name, type, args);
+  if (seconds > 0) {
+    setInterval("render_module('"+name+"', '"+type+"', '"+args+"')", (seconds * 1000));
+>>>>>>> 140d0b8bc94632c3cccae35db03f904ec7fe85e5
   }
 }
 

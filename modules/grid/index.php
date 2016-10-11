@@ -1,19 +1,21 @@
 <?php
 
+$datadir=$_GET['datadir'];
+$itemsArg=$_GET['items'];
+$items = explode (",", $itemsArg);
+
 /* DATA */
-$data = array(
-  array('TRANSMIT',     'Blurb', 'Blarb', 'Z@statuspanic, H@statuspanic'),
-  array('UNISON',       'Blurb', 'Blarb', 'Z@statuspanic, L@statuspanic, I@statuspanic'),
-  array('CODA',         'Blurb', 'Blarb', 'Z@statuspanic, H@statuspanic, P@statuspanic'),
-  array('OTHER THING',  'Blurb', 'Blarb', 'G@statuspanic, L@statuspanic'),
-  array('EXCITING',     'Blurb', 'Blarb', 'L@statuspanic, G@statuspanic, I@statuspanic')
-);
+$gridrows = array();
+foreach ($items as $item) {
+  include($datadir . "/gr_" . $item . ".php");
+}
+$data = array_values ($gridrows);
 
 /* DISPLAY */
 
 ?>
 
-<div>
+<div class="grid">
     <table border='0' width='100%' cellpadding='0' cellspacing='10'>
     <?php
     $count = 0;

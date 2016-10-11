@@ -10,14 +10,15 @@ class Bar {
 
 /* DATA */
 $bars = array();
-$bars[] = new Bar('TRANSMIT',  18,   1); 
-$bars[] = new Bar('CODA',      29,   3); 
-$bars[] = new Bar('UNISON',    48,   3); 
-$bars[] = new Bar('CANDYBAR',   8,   2); 
-$max = rand(3, 100);
-$bars[] = new Bar('GENERAL', $max,   0);
-$bars[] = new Bar('SECRETS',   15,   2);
+$tips = array();
 
+$datadir=$_GET['datadir'];
+$itemsArg=$_GET['items'];
+$items = explode (",", $itemsArg);
+
+foreach ($items as $item) {
+  include($datadir . "/bg_" . $item . ".php");
+}
 
 /* DISPLAY */
 $max_height = 0;
@@ -50,7 +51,7 @@ $final_padding = max($default_padding, ($max_width - (($bar_width + $total_outer
     
 ?>
     <div class='bar' style='margin-top: <?php echo $top_offset . 'px; width: ' .
-                            $bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>'>
+                            $bar_width . 'px; padding: 0 ' . $final_padding . 'px;' ?>' title='<?php echo $tips[$bar->name] ?>'>
         <div class='header'><?php echo '<span class="total">'. $bar->height .'</span> / <span class="remaining">'. $bar->remaining .'</span>'; ?></div>
         <div class='view' id='bar_<?php echo $count ?>' style='height: <?php echo $bar_height; ?>px;'></div>
     </div>

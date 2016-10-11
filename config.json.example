@@ -4,26 +4,32 @@
   "rotate": "no",
   "modules": [
     {
-      "name": "bargraph",
+      "name": "chargify",
       "width": 980,
-      "update": 15,
-      "class": "middle",
+      "height": "",
+      "class": "",
+      "update": 300,
       "args": {
-        "height": 300
+        "api_key": "YOUR_CHARGIFY_API_KEY",
+        "domain": "YOUR_CHARGIFY_SUBDOMAIN"
       }
     },
     {
       "name": "grid",
       "width": 980,
-      "update": 300
+      "update": 300,
+      "class": "",
+      "args": {
+      }
     },
     {
       "name": "countdown",
       "width": 980,
       "update": 3600,
+      "class": "",
       "args": {
         "event": "UNTIL SOMETHING",
-        "stop": 1274706000,
+        "stop": 1379906000,
         "timezone": "America/Chicago"
       }
     },
@@ -34,7 +40,7 @@
       "height": 120,
       "update": 15,
       "args": {
-        "value": ""
+        "value": "10"
       }
     },
     {
@@ -55,35 +61,32 @@
       "height": 120,
       "update": 3600,
       "args": {
-        "zipcode": "50613"
+        "zipcode": "78216"
       }
     },
     {
       "name": "space",
       "width": 300,
-      "update": 0
+      "update": 0,
+      "class": "",
+      "args": {
+      }
     },
     {
       "name": "bubblelist",
       "width": 200,
       "update": 0,
-      "class": "mini bluegradient"
-    },
-    {
-      "name": "newsticker",
-      "width": 980,
-      "update": 3600
-    },
-    {
-      "name": "stockticker",
-      "width": 980,
-      "update": 3600
+      "class": "mini bluegradient",
+      "args": {
+      }
     },
     {
       "name": "meta",
       "width": 980,
-      "update": 0
+      "update": 0,
+      "class": "",
+      "args": {
+      }
     }
   ]
 }
-
